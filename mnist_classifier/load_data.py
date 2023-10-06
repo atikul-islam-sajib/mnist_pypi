@@ -226,7 +226,7 @@ class dataloader:
                 TRAIN_LOADER (torch.utils.data.DataLoader): DataLoader for training data.
                 TEST_LOADER (torch.utils.data.DataLoader): DataLoader for testing data.
         """
-        BATCH_SIZE = 64
+        BATCH_SIZE = 128
 
         TRAIN_LOADER = DataLoader(dataset = list(zip(X_train, y_train)),\
                                 batch_size = BATCH_SIZE,\

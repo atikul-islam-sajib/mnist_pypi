@@ -80,7 +80,7 @@ class model(nn.Module):
             nn.ReLU(inplace=True),
             nn.Dropout(p=dropout),
 
-            nn.Linear(in_features=128, out_features=64, bias=True),
+            nn.Linear(in_features = 128, out_features=64, bias=True),
             nn.ReLU(inplace=True),
             nn.Dropout(p=dropout)
         )
@@ -187,7 +187,7 @@ class model_train:
         self.model  = model
         self.EPOCHS = epochs
         self.loss_function = nn.CrossEntropyLoss()
-        self.optimizer     = optim.Adam(params = model.parameters(), lr = 0.001)
+        self.optimizer     = optim.AdamW(params = model.parameters(), lr = 0.01)
     
     def start_training(self):
         history    = {'loss': [], 'val_loss': [], 'accuracy': [], 'val_accuracy': []}
