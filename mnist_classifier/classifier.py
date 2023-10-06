@@ -97,7 +97,7 @@ class model(nn.Module):
             nn.ReLU(inplace=True),
             nn.Dropout(p=0.4),
 
-            nn.Linear(in_features=16, out_features=9),
+            nn.Linear(in_features=16, out_features = 10),
             nn.Softmax(dim = 1)
         )
 
