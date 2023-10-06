@@ -50,9 +50,13 @@ class dataloader:
         self.extract_to = extract_to
         self._unzip_file(filename=self.filename, extract_to=self.extract_to)
         self.STORE_DATA = self._extract_features(DIRECTORY=os.path.join(self.extract_to, 'dataset'))
-        print(self.STORE_DATA[0][0].shape)
-        X, y, TRAIN_LOADER, TEST_LOADER = self._split_dataset(STORE_DATA = self.STORE_DATA)
-
+        X, y, TRAIN_LOADER, TEST_LOADER = self.dataset(STORE_DATA = self.STORE_DATA)
+    
+    def dataset(self, STORE_DATA = None):
+        X, y, TRAIN_LOADER, TEST_LOADER = self._split_dataset(STORE_DATA = STORE_DATA)
+        
+        return X, y, TRAIN_LOADER, TEST_LOADER
+    
     def _unzip_file(self, filename=None, extract_to=None):
         """
             Extracts the zip file to the specified directory.
